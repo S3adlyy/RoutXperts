@@ -26,7 +26,7 @@
 
         html {
             scroll-behavior: smooth;
-            cursor: none; /* Hide default cursor */
+            cursor: none;
         }
 
         body {
@@ -36,7 +36,7 @@
             padding: 20px;
             position: relative;
             overflow-x: hidden;
-            cursor: none; /* Hide default cursor */
+            cursor: none;
         }
 
         /* Custom Cursor */
@@ -1168,6 +1168,252 @@
             font-weight: 700;
         }
 
+        /* Services Tab Styles */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-md);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .service-info strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .service-info span {
+            color: #667eea;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+
+        .service-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .config-details {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-md);
+            border: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .config-details h3 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-requirements {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .service-requirements h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .service-requirements ul {
+            margin-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .service-requirements li {
+            margin-bottom: 8px;
+        }
+
+        .config-section {
+            margin-bottom: 40px;
+        }
+
+        .config-section h4 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .code-block {
+            background: #2c3e50;
+            color: #0f0;
+            padding: 25px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .code-block .comment {
+            color: #888;
+            font-style: italic;
+        }
+
+        .code-block .command {
+            color: #4facfe;
+        }
+
+        .code-block .output {
+            color: #ffd700;
+        }
+
+        .code-block .function {
+            color: #f093fb;
+        }
+
+        .verification-steps {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #4facfe;
+        }
+
+        .verification-steps h5 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .test-command {
+            background: #2c3e50;
+            color: #0f0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .command-steps {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .command-steps h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .command-steps ol {
+            margin-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .command-steps li {
+            margin-bottom: 15px;
+        }
+
+        .web-server {
+            border-top: 5px solid #667eea;
+        }
+
+        .database {
+            border-top: 5px solid #48bb78;
+        }
+
+        .file-sharing {
+            border-top: 5px solid #f093fb;
+        }
+
+        .monitoring {
+            border-top: 5px solid #f5576c;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
@@ -1199,6 +1445,12 @@
                 left: 10px;
                 padding: 10px 15px;
                 font-size: 0.8em;
+            }
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            .config-details {
+                padding: 20px;
             }
         }
     </style>
@@ -1254,6 +1506,7 @@
             <button class="tab" onclick="switchTab(4)">📡 Configuration Point d'Accès</button>
             <button class="tab" onclick="switchTab(5)">📚 Documentation</button>
             <button class="tab" onclick="switchTab(6)">⚙️ OSPF Configuration</button>
+            <button class="tab" onclick="switchTab(7)">🖥️ Services</button>
         </div>
 
         <div class="tab-content active">
@@ -3135,175 +3388,6 @@
                         Configuration du protocole OSPF sur tous les routeurs départementaux pour assurer la communication inter-départements via le backbone.
                     </p>
                 </div>
-
-                <!-- Department OSPF Overview -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 7: Configuration OSPF Départementale</h4>
-                    <p style="color: #555; line-height: 1.8; margin-bottom: 15px;"><strong>Objectif :</strong> Activer OSPF sur tous les routeurs départementaux et annoncer leurs réseaux respectifs.</p>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">📋 Réseaux à annoncer par département</h5>
-                        <div style="overflow-x: auto;">
-                            <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px;">
-                                <thead>
-                                    <tr>
-                                        <th style="background: var(--primary-gradient); color: white; padding: 12px; text-align: left;">Département</th>
-                                        <th style="background: var(--primary-gradient); color: white; padding: 12px; text-align: left;">Routeur</th>
-                                        <th style="background: var(--primary-gradient); color: white; padding: 12px; text-align: left;">Réseau LAN</th>
-                                        <th style="background: var(--primary-gradient); color: white; padding: 12px; text-align: left;">Lien Backbone</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><strong>Web/Marketing</strong></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">RZ-1</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>192.168.0.0/19</code></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>10.0.0.0/30</code></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><strong>IT/Monitoring</strong></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">RZ-2</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>192.168.40.0/22</code></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>10.0.0.4/30</code></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><strong>Gestion/DB</strong></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">RZ-3</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>192.168.32.0/21</code></td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;"><code>10.0.0.8/30</code></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px;"><strong>Collaboration</strong></td>
-                                        <td style="padding: 10px;">RZ-4</td>
-                                        <td style="padding: 10px;"><code>192.168.44.0/25</code></td>
-                                        <td style="padding: 10px;"><code>10.0.0.12/30</code></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- Department OSPF Configuration -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 8: Configuration OSPF sur RZ-1 (Web/Marketing)</h4>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔧 Suppression des routes statiques</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>RZ1# configure terminal</div>
-                            <div>RZ1(config)# no ip route 192.168.0.0 255.255.224.0 50.10.0.2</div>
-                            <div>RZ1(config)# exit</div>
-                        </div>
-                    </div>
-
-                    <div style="background: #f0f4ff; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔧 Configuration OSPF</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>RZ1# configure terminal</div>
-                            <div>RZ1(config)# router ospf 1</div>
-                            <div>RZ1(config-router)# network 192.168.0.0 0.0.31.255 area 0</div>
-                            <div>RZ1(config-router)# network 10.0.0.0 0.0.0.3 area 0</div>
-                            <div>RZ1(config-router)# exit</div>
-                            <div>RZ1(config)# exit</div>
-                            <div>RZ1# write</div>
-                        </div>
-                    </div>
-
-                <!-- RZ-2 Configuration -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 9: Configuration OSPF sur RZ-2 (IT/Monitoring)</h4>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔧 Configuration OSPF</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>RZ2# configure terminal</div>
-                            <div>RZ2(config)# router ospf 1</div>
-                            <div>RZ2(config-router)# network 192.168.40.0 0.0.3.255 area 0</div>
-                            <div>RZ2(config-router)# network 10.0.0.4 0.0.0.3 area 0</div>
-                            <div>RZ2(config-router)# exit</div>
-                            <div>RZ2(config)# exit</div>
-                            <div>RZ2# write</div>
-                        </div>
-                    </div>
-
-
-                <!-- RZ-3 Configuration -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 10: Configuration OSPF sur RZ-3 (Gestion/DB)</h4>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔧 Configuration OSPF</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>RZ3# configure terminal</div>
-                            <div>RZ3(config)# router ospf 1</div>
-                            <div>RZ3(config-router)# network 192.168.32.0 0.0.7.255 area 0</div>
-                            <div>RZ3(config-router)# network 10.0.0.8 0.0.0.3 area 0</div>
-                            <div>RZ3(config-router)# exit</div>
-                            <div>RZ3(config)# exit</div>
-                            <div>RZ3# write</div>
-                        </div>
-                    </div>
-
-                
-
-                <!-- RZ-4 Configuration -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 11: Configuration OSPF sur RZ-4 (Collaboration)</h4>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔧 Configuration OSPF</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>RZ4# configure terminal</div>
-                            <div>RZ4(config)# router ospf 1</div>
-                            <div>RZ4(config-router)# network 192.168.44.0 0.0.0.127 area 0</div>
-                            <div>RZ4(config-router)# network 10.0.0.12 0.0.0.3 area 0</div>
-                            <div>RZ4(config-router)# exit</div>
-                            <div>RZ4(config)# exit</div>
-                            <div>RZ4# write</div>
-                        </div>
-                    </div>
-
-                    
-
-                <!-- Test Results Section -->
-                <div class="objective-item" style="margin-bottom: 30px; background: linear-gradient(135deg, #d4edda 0%, #ffffff 100%);">
-                    <h4 style="color: #155724; font-size: 1.5em; margin-bottom: 15px;">🎯 Tests de Connectivité Inter-Départements</h4>
-                    <p style="color: #555; line-height: 1.8; margin-bottom: 20px;">
-                        Après configuration complète d'OSPF, testez la connectivité entre les différents départements pour vérifier que le routage dynamique fonctionne correctement.
-                    </p>
-                </div>
-
-                <!-- Test Examples -->
-                <div class="objective-item" style="margin-bottom: 30px;">
-                    <h4 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">Étape 12: Tests de Ping Inter-Départements</h4>
-                    
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔍 Test depuis Web/Marketing vers Gestion/DB</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>PC1> ping 192.168.32.10</div>
-                            <div style="color: #888;">Pinging 192.168.32.10 with 32 bytes of data:</div>
-                            <div style="color: #0f0;">Reply from 192.168.32.10: bytes=32 time=28ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.32.10: bytes=32 time=32ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.32.10: bytes=32 time=25ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.32.10: bytes=32 time=30ms TTL=126</div>
-                            <div style="color: #888;">Ping statistics for 192.168.32.10:</div>
-                            <div style="color: #888;">    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)</div>
-                        </div>
-                    </div>
-
-                    <div style="background: #f0f4ff; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.2em;">🔍 Test depuis IT/Monitoring vers Collaboration</h5>
-                        <div style="background: #2c3e50; color: #0f0; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; margin: 10px 0;">
-                            <div>PC2> ping 192.168.44.10</div>
-                            <div style="color: #888;">Pinging 192.168.44.10 with 32 bytes of data:</div>
-                            <div style="color: #0f0;">Reply from 192.168.44.10: bytes=32 time=35ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.44.10: bytes=32 time=40ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.44.10: bytes=32 time=32ms TTL=126</div>
-                            <div style="color: #0f0;">Reply from 192.168.44.10: bytes=32 time=38ms TTL=126</div>
-                            <div style="color: #888;">Ping statistics for 192.168.44.10:</div>
-                            <div style="color: #888;">    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)</div>
-                        </div>
-                    </div>
-
                     <!-- Test Results Images -->
                     <div style="margin-top: 30px;">
                         <h5 style="color: #2c3e50; margin-bottom: 20px; font-size: 1.2em; text-align: center;">📸 Résultats des Tests de Connectivité</h5>
@@ -3343,475 +3427,848 @@
                 </div>
                 </div>
 
+        <div class="tab-content">
+            <div style="background: white; border-radius: 15px; padding: 50px;">
+                <h2 style="color: #2c3e50; margin-bottom: 30px; font-size: 2.5em; text-align: center; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    🖥️ Configuration des Services Linux
+                </h2>
+                <p style="color: #7f8c8d; text-align: center; margin-bottom: 40px; font-size: 1.1em;">
+                    Guide complet d'installation et configuration des services sur Ubuntu Server pour les départements RoutXperts
+                </p>
 
-        
-        
+                <div class="services-container">
+                    <!-- Apache2 Web Server -->
+                    <div class="service-card web-server" onclick="showServiceDetails('apache')">
+                        <div class="service-icon">🌐</div>
+                        <h3>Apache2 Web Server</h3>
+                        <p>Serveur web pour le département Marketing/Web. Hébergement des sites internet et applications web.</p>
+                        <div class="service-info">
+                            <strong>📍 Département:</strong> Web/Marketing (RZ-1)<br>
+                            <strong>📊 IP Serveur:</strong> <span>192.168.0.10</span><br>
+                            <strong>📦 Ports:</strong> 80 (HTTP), 443 (HTTPS)
+                        </div>
+                        <div class="service-status">
+                            <div class="status-indicator"></div>
+                            <span style="color: #2ecc71; font-weight: 500;">● Service actif</span>
+                        </div>
+                    </div>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-text">
-                    Website created by
+                    <!-- MySQL Database Server -->
+                    <div class="service-card database" onclick="showServiceDetails('mysql')">
+                        <div class="service-icon">💾</div>
+                        <h3>MySQL Database Server</h3>
+                        <p>Base de données relationnelle pour le département Gestion. Stockage et gestion des données métier.</p>
+                        <div class="service-info">
+                            <strong>📍 Département:</strong> Gestion/DB (RZ-3)<br>
+                            <strong>📊 IP Serveur:</strong> <span>192.168.32.10</span><br>
+                            <strong>📦 Port:</strong> 3306
+                        </div>
+                        <div class="service-status">
+                            <div class="status-indicator"></div>
+                            <span style="color: #2ecc71; font-weight: 500;">● Service actif</span>
+                        </div>
+                    </div>
+
+                    <!-- NFS File Server -->
+                    <div class="service-card file-sharing" onclick="showServiceDetails('nfs')">
+                        <div class="service-icon">📁</div>
+                        <h3>NFS File Server</h3>
+                        <p>Système de partage de fichiers pour le département Collaboration. Partage centralisé des documents.</p>
+                        <div class="service-info">
+                            <strong>📍 Département:</strong> Collaboration (RZ-4)<br>
+                            <strong>📊 IP Serveur:</strong> <span>192.168.44.10</span><br>
+                            <strong>📦 Port:</strong> 2049
+                        </div>
+                        <div class="service-status">
+                            <div class="status-indicator"></div>
+                            <span style="color: #2ecc71; font-weight: 500;">● Service actif</span>
+                        </div>
+                    </div>
+
+                    <!-- Prometheus & Grafana -->
+                    <div class="service-card monitoring" onclick="showServiceDetails('prometheus')">
+                        <div class="service-icon">📊</div>
+                        <h3>Prometheus & Grafana</h3>
+                        <p>Système de monitoring pour le département IT. Surveillance des performances et tableaux de bord.</p>
+                        <div class="service-info">
+                            <strong>📍 Département:</strong> IT/Monitoring (RZ-2)<br>
+                            <strong>📊 IP Serveur:</strong> <span>192.168.40.10</span><br>
+                            <strong>📦 Ports:</strong> 9090 (Prometheus), 3000 (Grafana)
+                        </div>
+                        <div class="service-status">
+                            <div class="status-indicator"></div>
+                            <span style="color: #2ecc71; font-weight: 500;">● Service actif</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-author">
-                    <span class="footer-icon">✨</span>
-                    Saadli Wassim
-                    <span class="footer-icon">✨</span>
-                </div>
-            </div>
-        </footer>
-    </div>
 
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
-    <script>
-        // Custom Cursor Implementation
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        document.body.appendChild(cursor);
-
-        const trailer = document.createElement('div');
-        trailer.className = 'cursor-trailer';
-        document.body.appendChild(trailer);
-
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        let trailerX = 0;
-        let trailerY = 0;
-        let lastTrailTime = 0;
-        const trailParticles = [];
-
-        // Create trail particles
-        function createTrailParticle(x, y) {
-            const particle = document.createElement('div');
-            particle.className = 'cursor-trail-particle';
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            document.body.appendChild(particle);
-            
-            // Animate particle
-            setTimeout(() => {
-                particle.style.opacity = '0.8';
-                particle.style.transform = `translate(-50%, -50%) scale(1.5)`;
-            }, 10);
-            
-            setTimeout(() => {
-                particle.style.opacity = '0';
-                particle.style.transform = `translate(-50%, -50%) scale(0.5)`;
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                    }
-                }, 300);
-            }, 300);
-        }
-
-        // Update cursor position
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Create trail particles periodically
-            const now = Date.now();
-            if (now - lastTrailTime > 30) { // Create particle every 30ms
-                createTrailParticle(mouseX, mouseY);
-                lastTrailTime = now;
-            }
-        });
-
-        // Smooth cursor animation
-        function animateCursor() {
-            // Main cursor - fast and direct
-            cursorX += (mouseX - cursorX) * 0.15;
-            cursorY += (mouseY - cursorY) * 0.15;
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-
-            // Trailer - slower and lagging
-            trailerX += (mouseX - trailerX) * 0.08;
-            trailerY += (mouseY - trailerY) * 0.08;
-            trailer.style.left = trailerX + 'px';
-            trailer.style.top = trailerY + 'px';
-
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hover effects
-        const hoverElements = document.querySelectorAll('a, button, .tab, .department, .backbone, .cloud-wifi, .download-btn, .feature, .team-member, .objective-item, .top-credit');
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-                trailer.style.width = '20px';
-                trailer.style.height = '20px';
-                trailer.style.opacity = '0.8';
-                trailer.style.background = 'linear-gradient(135deg, #f5576c, #f093fb)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-                trailer.style.width = '8px';
-                trailer.style.height = '8px';
-                trailer.style.opacity = '0.6';
-                trailer.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-            });
-        });
-
-        // Click effect
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-        });
-
-        // Hide cursor when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            trailer.style.opacity = '0';
-        });
-
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-            trailer.style.opacity = '0.6';
-        });
-
-        // Disable custom cursor on touch devices
-        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-            cursor.style.display = 'none';
-            trailer.style.display = 'none';
-            document.body.style.cursor = 'auto';
-            document.documentElement.style.cursor = 'auto';
-        }
-
-        function switchTab(index) {
-            const tabs = document.querySelectorAll('.tab');
-            const contents = document.querySelectorAll('.tab-content');
-            
-            tabs.forEach(tab => tab.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
-            
-            tabs[index].classList.add('active');
-            contents[index].classList.add('active');
-        }
-
-        function toggleDepartment(element) {
-            element.classList.toggle('active');
-        }
-
-        function showBackboneInfo() {
-            const content = `
-                <h2 style="color: #ff6b6b; margin-bottom: 20px;">🔴 Backbone OSPF + Routeur Internet</h2>
-                <div style="line-height: 1.8; color: #2c3e50;">
-                    <h3 style="margin-top: 20px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🎯 Rôle Principal</h3>
-                    <p style="margin-top: 15px;">Le backbone est le <strong>cœur central</strong> de toute l'infrastructure RoutXperts. Il assure :</p>
-                    <ul style="margin-left: 20px; margin-top: 15px;">
-                        <li style="margin-bottom: 10px;">📡 <strong>Routage OSPF dynamique :</strong> Apprentissage automatique de toutes les routes départementales (RZ-1, RZ-2, RZ-3, RZ-4)</li>
-                        <li style="margin-bottom: 10px;">🔄 <strong>Convergence rapide :</strong> Mise à jour instantanée des tables de routage en cas de modification</li>
-                        <li style="margin-bottom: 10px;">🚦 <strong>Routage optimal :</strong> Calcul du meilleur chemin pour le trafic inter-départemental</li>
-                        <li style="margin-bottom: 10px;">⚡ <strong>Haute disponibilité :</strong> Redondance et basculement automatique</li>
-                    </ul>
+                <!-- Apache2 Configuration Details -->
+                <div id="apache-details" class="config-details" style="display: none;">
+                    <h3>🌐 Configuration Apache2 Web Server</h3>
                     
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🌐 Routeur Internet (R-NAT)</h3>
-                    <p style="margin-top: 15px;">Le routeur R-NAT fait partie du backbone et gère :</p>
-                    <ul style="margin-left: 20px; margin-top: 15px;">
-                        <li style="margin-bottom: 10px;">🔐 <strong>NAT/PAT :</strong> Traduction d'adresses privées (192.168.0.0/17) vers publiques</li>
-                        <li style="margin-bottom: 10px;">🌍 <strong>Accès Internet :</strong> Passerelle unique vers le réseau externe</li>
-                        <li style="margin-bottom: 10px;">🛡️ <strong>Sécurité :</strong> Point de contrôle des flux entrants/sortants</li>
-                    </ul>
-
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🔗 Interconnexions</h3>
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-top: 15px;">
-                        <p><strong>Le backbone se connecte à :</strong></p>
-                        <ul style="margin-left: 20px; margin-top: 10px;">
-                            <li>🌐 Département Web/Marketing (RZ-1) - 7 170 postes</li>
-                            <li>🖥️ Département IT/Monitoring (RZ-2) - 597 postes</li>
-                            <li>💼 Département Gestion/DB (RZ-3) - 1 970 postes</li>
-                            <li>👥 Département Collaboration (RZ-4) - 112 postes</li>
-                            <li>🌍 Réseau Internet via R-NAT</li>
+                    <div class="service-requirements">
+                        <h4>📋 Prérequis</h4>
+                        <ul>
+                            <li>Ubuntu Server 20.04/22.04 LTS</li>
+                            <li>Accès root ou utilisateur avec sudo</li>
+                            <li>Connexion réseau établie</li>
+                            <li>Au moins 1 Go de RAM disponible</li>
                         </ul>
                     </div>
 
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">✅ Avantages OSPF</h3>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>⚙️ Configuration automatique</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Routes apprises dynamiquement</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>⚡ Convergence rapide</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Adaptation immédiate aux pannes</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>📈 Scalabilité</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Support réseaux de grande taille</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>🏆 Standard</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Protocole éprouvé et universel</p>
+                    <div class="config-section">
+                        <h4>🔧 Étape 1: Installation d'Apache2</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Mettre à jour les paquets</span><br>
+                                <span class="command">sudo</span> apt update && <span class="command">sudo</span> apt upgrade -y<br><br>
+                                
+                                <span class="comment"># Installer Apache2</span><br>
+                                <span class="command">sudo</span> apt install apache2 -y<br><br>
+                                
+                                <span class="comment"># Vérifier l'installation</span><br>
+                                <span class="command">sudo</span> systemctl status apache2<br>
+                                <span class="output">● apache2.service - The Apache HTTP Server</span><br>
+                                <span class="output">     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)</span><br>
+                                <span class="output">     Active: active (running) since ...</span>
+                            </code>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-top: 25px;">
-                        <strong>🎓 Configuration gérée par :</strong> Administrateur Backbone OSPF / Routeur Internet
+                    <div class="config-section">
+                        <h4>⚙️ Étape 2: Configuration du site web</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer le répertoire du site</span><br>
+                                <span class="command">sudo</span> mkdir -p /var/www/routxperts-web<br><br>
+                                
+                                <span class="comment"># Donner les permissions appropriées</span><br>
+                                <span class="command">sudo</span> chown -R www-data:www-data /var/www/routxperts-web<br>
+                                <span class="command">sudo</span> chmod -R 755 /var/www/routxperts-web<br><br>
+                                
+                                <span class="comment"># Créer la page d'accueil</span><br>
+                                <span class="command">sudo</span> nano /var/www/routxperts-web/index.html<br><br>
+                                
+                                <span class="comment"># Contenu de index.html :</span><br>
+                                &lt;!DOCTYPE html&gt;<br>
+                                &lt;html&gt;<br>
+                                &lt;head&gt;<br>
+                                &lt;title&gt;RoutXperts - Département Web&lt;/title&gt;<br>
+                                &lt;/head&gt;<br>
+                                &lt;body&gt;<br>
+                                &lt;h1&gt;🌐 Bienvenue sur le serveur Web RoutXperts&lt;/h1&gt;<br>
+                                &lt;p&gt;Département: Web/Marketing&lt;/p&gt;<br>
+                                &lt;p&gt;IP: 192.168.0.10&lt;/p&gt;<br>
+                                &lt;/body&gt;<br>
+                                &lt;/html&gt;
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>🎯 Étape 3: Configuration du Virtual Host</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer le fichier de configuration du site</span><br>
+                                <span class="command">sudo</span> nano /etc/apache2/sites-available/routxperts-web.conf<br><br>
+                                
+                                <span class="comment"># Ajouter la configuration suivante :</span><br>
+                                &lt;VirtualHost *:80&gt;<br>
+                                    ServerAdmin webmaster@routxperts.local<br>
+                                    ServerName 192.168.0.10<br>
+                                    DocumentRoot /var/www/routxperts-web<br><br>
+                                    
+                                    ErrorLog ${APACHE_LOG_DIR}/routxperts-error.log<br>
+                                    CustomLog ${APACHE_LOG_DIR}/routxperts-access.log combined<br><br>
+                                    
+                                    &lt;Directory /var/www/routxperts-web&gt;<br>
+                                        Options Indexes FollowSymLinks<br>
+                                        AllowOverride All<br>
+                                        Require all granted<br>
+                                    &lt;/Directory&gt;<br>
+                                &lt;/VirtualHost&gt;<br><br>
+                                
+                                <span class="comment"># Activer le site et recharger Apache</span><br>
+                                <span class="command">sudo</span> a2ensite routxperts-web.conf<br>
+                                <span class="command">sudo</span> a2dissite 000-default.conf<br>
+                                <span class="command">sudo</span> systemctl reload apache2
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>🔒 Étape 4: Configuration du pare-feu</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Autoriser HTTP et HTTPS</span><br>
+                                <span class="command">sudo</span> ufw allow 'Apache Full'<br><br>
+                                
+                                <span class="comment"># Vérifier les règles</span><br>
+                                <span class="command">sudo</span> ufw status<br>
+                                <span class="output">Status: active</span><br>
+                                <span class="output">To                         Action      From</span><br>
+                                <span class="output">--                         ------      ----</span><br>
+                                <span class="output">Apache Full                ALLOW       Anywhere</span>
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="verification-steps">
+                        <h5>✅ Vérification du service</h5>
+                        <div class="test-command">curl -I http://192.168.0.10</div>
+                        <p>Résultat attendu : HTTP/1.1 200 OK</p>
+                        <div class="test-command">sudo systemctl status apache2</div>
+                        <p>Vérifier que le service est "active (running)"</p>
                     </div>
                 </div>
-            `;
-            showModal(content);
-        }
 
-        function showCloudInfo() {
-            const content = `
-                <h2 style="color: #4facfe; margin-bottom: 20px;">☁️ Réseau de Transit / Cloud WiFi</h2>
-                <div style="line-height: 1.8; color: #2c3e50;">
-                    <h3 style="margin-top: 20px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🎯 Fonction Principale</h3>
-                    <p style="margin-top: 15px;">Le réseau de transit agit comme un <strong>hub central</strong> qui interconnecte physiquement tous les éléments du réseau :</p>
-                    <ul style="margin-left: 20px; margin-top: 15px;">
-                        <li style="margin-bottom: 10px;">🔗 <strong>Point de convergence :</strong> Tous les routeurs départementaux (RZ-1, RZ-2, RZ-3, RZ-4) se connectent ici</li>
-                        <li style="margin-bottom: 10px;">🌐 <strong>Liaison au backbone :</strong> Interface directe avec le routeur OSPF central</li>
-                        <li style="margin-bottom: 10px;">📶 <strong>Communication sans fil :</strong> Permet la connectivité WiFi entre équipements</li>
-                        <li style="margin-bottom: 10px;">🔄 <strong>Réseau neutre :</strong> Ne fait que transporter les données, pas de routage</li>
-                    </ul>
+                <!-- MySQL Configuration Details -->
+                <div id="mysql-details" class="config-details" style="display: none;">
+                    <h3>💾 Configuration MySQL Database Server</h3>
+                    
+                    <div class="service-requirements">
+                        <h4>📋 Prérequis</h4>
+                        <ul>
+                            <li>Ubuntu Server 20.04/22.04 LTS</li>
+                            <li>Minimum 2 Go de RAM</li>
+                            <li>10 Go d'espace disque libre</li>
+                            <li>Connexion réseau vers les autres départements</li>
+                        </ul>
+                    </div>
 
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🏗️ Architecture de Connexion</h3>
-                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
-                        <p><strong>Chaque routeur départemental possède :</strong></p>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
-                            <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
-                                <strong>📍 Interface LAN</strong>
-                                <p style="margin-top: 5px; font-size: 0.9em; color: #555;">Connectée au switch du département</p>
-                            </div>
-                            <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #4facfe;">
-                                <strong>📍 Interface WAN</strong>
-                                <p style="margin-top: 5px; font-size: 0.9em; color: #555;">Connectée au Cloud WiFi (transit)</p>
-                            </div>
+                    <div class="config-section">
+                        <h4>🔧 Étape 1: Installation de MySQL</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Mettre à jour les paquets</span><br>
+                                <span class="command">sudo</span> apt update<br><br>
+                                
+                                <span class="comment"># Installer MySQL Server</span><br>
+                                <span class="command">sudo</span> apt install mysql-server -y<br><br>
+                                
+                                <span class="comment"># Vérifier l'installation</span><br>
+                                <span class="command">sudo</span> systemctl status mysql<br>
+                                <span class="output">● mysql.service - MySQL Community Server</span><br>
+                                <span class="output">     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)</span><br>
+                                <span class="output">     Active: active (running) since ...</span>
+                            </code>
                         </div>
                     </div>
 
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">🔄 Flux de Communication</h3>
-                    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin-top: 15px;">
-                        <p style="margin-bottom: 15px;"><strong>Exemple : PC du Web (RZ-1) → Serveur DB (RZ-3)</strong></p>
-                        <div style="background: white; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.9em;">
-                            PC Web → Switch RZ-1 → Routeur RZ-1 (WAN) →<br>
-                            <span style="color: #4facfe; font-weight: bold;">☁️ Cloud WiFi (Transit)</span> →<br>
-                            Backbone OSPF (routage) →<br>
-                            <span style="color: #4facfe; font-weight: bold;">☁️ Cloud WiFi (Transit)</span> →<br>
-                            Routeur RZ-3 (WAN) → Switch RZ-3 → Serveur DB
+                    <div class="config-section">
+                        <h4>🔐 Étape 2: Configuration de sécurité</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Lancer le script de sécurisation</span><br>
+                                <span class="command">sudo</span> mysql_secure_installation<br><br>
+                                
+                                <span class="comment"># Réponses aux questions :</span><br>
+                                <span class="output">1. VALIDATE PASSWORD COMPONENT: Y (recommandé)</span><br>
+                                <span class="output">2. Niveau de mot de passe: 2 (Moyen)</span><br>
+                                <span class="output">3. Nouveau mot de passe: [votre_mot_de_passe]</span><br>
+                                <span class="output">4. Supprimer utilisateurs anonymes: Y</span><br>
+                                <span class="output">5. Désactiver connexion root à distance: Y</span><br>
+                                <span class="output">6. Supprimer base de test: Y</span><br>
+                                <span class="output">7. Recharger les privilèges: Y</span>
+                            </code>
                         </div>
                     </div>
 
-                    <h3 style="margin-top: 25px; color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">✅ Avantages</h3>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>🚀 Simplicité</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Architecture centralisée facile à gérer</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>📈 Évolutivité</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Ajout facile de nouveaux départements</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>🔌 Flexibilité</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Sans fil ou filaire selon besoins</p>
-                        </div>
-                        <div style="background: #e8f4f8; padding: 15px; border-radius: 8px;">
-                            <strong>🛠️ Maintenance</strong>
-                            <p style="margin-top: 5px; font-size: 0.9em;">Point unique de supervision</p>
+                    <div class="config-section">
+                        <h4>⚙️ Étape 3: Configuration réseau</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Éditer la configuration MySQL</span><br>
+                                <span class="command">sudo</span> nano /etc/mysql/mysql.conf.d/mysqld.cnf<br><br>
+                                
+                                <span class="comment"># Modifier les lignes suivantes :</span><br>
+                                <span class="output">bind-address = 192.168.32.10</span><br>
+                                <!-- À ajouter après la ligne interrompue -->
+                                <span class="output">bind-address = 192.168.32.10</span><br>
+                                <span class="output">port = 3306</span><br>
+                                <span class="output">max_connections = 200</span><br>
+                                <span class="output">innodb_buffer_pool_size = 512M</span><br><br>
+                                
+                                <span class="comment"># Redémarrer MySQL</span><br>
+                                <span class="command">sudo</span> systemctl restart mysql
+                            </code>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin-top: 25px;">
-                        <strong>💡 À retenir :</strong> Le Cloud WiFi est un réseau de <strong>transit pur</strong> - il ne fait que connecter les routeurs entre eux et au backbone. Tout le routage intelligent est géré par OSPF au niveau du backbone.
+                    <div class="config-section">
+                        <h4>🗄️ Étape 4: Création de la base de données</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Se connecter à MySQL</span><br>
+                                <span class="command">sudo</span> mysql -u root -p<br><br>
+                                
+                                <span class="comment"># Créer la base de données RoutXperts</span><br>
+                                <span class="function">CREATE DATABASE</span> routxperts_db;<br><br>
+                                
+                                <span class="comment"># Créer un utilisateur dédié</span><br>
+                                <span class="function">CREATE USER</span> 'routxperts_admin'@'%' IDENTIFIED BY 'SecurePass123!';<br><br>
+                                
+                                <span class="comment"># Donner tous les privilèges</span><br>
+                                <span class="function">GRANT ALL PRIVILEGES</span> ON routxperts_db.* TO 'routxperts_admin'@'%';<br><br>
+                                
+                                <span class="function">FLUSH PRIVILEGES</span>;<br>
+                                <span class="function">EXIT</span>;
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="verification-steps">
+                        <h5>✅ Vérification du service</h5>
+                        <div class="test-command">mysql -u routxperts_admin -p -h 192.168.32.10 -e "SHOW DATABASES;"</div>
+                        <p>Résultat attendu : Affichage des bases de données incluant routxperts_db</p>
+                        <div class="test-command">sudo netstat -tlnp | grep 3306</div>
+                        <p>Vérifier que MySQL écoute sur 192.168.32.10:3306</p>
                     </div>
                 </div>
-            `;
-            showModal(content);
-        }
+                                <!-- NFS Configuration Details -->
+                <div id="nfs-details" class="config-details" style="display: none;">
+                    <h3>📁 Configuration NFS File Server</h3>
+                    
+                    <div class="service-requirements">
+                        <h4>📋 Prérequis</h4>
+                        <ul>
+                            <li>Ubuntu Server 20.04/22.04 LTS</li>
+                            <li>Espace disque suffisant pour le partage</li>
+                            <li>Accès réseau entre les départements</li>
+                            <li>Permissions de montage NFS sur les clients</li>
+                        </ul>
+                    </div>
 
-        function showModal(content) {
-            document.getElementById('modalBody').innerHTML = content;
-            document.getElementById('modal').classList.add('active');
-        }
+                    <div class="config-section">
+                        <h4>🔧 Étape 1: Installation de NFS Server</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Mettre à jour les paquets</span><br>
+                                <span class="command">sudo</span> apt update && <span class="command">sudo</span> apt upgrade -y<br><br>
+                                
+                                <span class="comment"># Installer le serveur NFS</span><br>
+                                <span class="command">sudo</span> apt install nfs-kernel-server -y<br><br>
+                                
+                                <span class="comment"># Vérifier l'installation</span><br>
+                                <span class="command">sudo</span> systemctl status nfs-kernel-server<br>
+                                <span class="output">● nfs-server.service - NFS server and services</span><br>
+                                <span class="output">     Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)</span><br>
+                                <span class="output">     Active: active (exited) since ...</span>
+                            </code>
+                        </div>
+                    </div>
 
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-        }
+                    <div class="config-section">
+                        <h4>📂 Étape 2: Configuration des répertoires partagés</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer les répertoires de partage</span><br>
+                                <span class="command">sudo</span> mkdir -p /srv/nfs/routxperts<br>
+                                <span class="command">sudo</span> mkdir -p /srv/nfs/departements<br>
+                                <span class="command">sudo</span> mkdir -p /srv/nfs/collaboration<br><br>
+                                
+                                <span class="comment"># Donner les permissions appropriées</span><br>
+                                <span class="command">sudo</span> chown -R nobody:nogroup /srv/nfs/<br>
+                                <span class="command">sudo</span> chmod -R 777 /srv/nfs/<br><br>
+                                
+                                <span class="comment"># Créer des fichiers de test</span><br>
+                                <span class="command">sudo</span> touch /srv/nfs/routxperts/README.txt<br>
+                                <span class="command">echo</span> "Partage NFS RoutXperts - Département Collaboration" | <span class="command">sudo</span> tee /srv/nfs/routxperts/README.txt
+                            </code>
+                        </div>
+                    </div>
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+                    <div class="config-section">
+                        <h4>⚙️ Étape 3: Configuration des exports NFS</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Éditer le fichier d'exports</span><br>
+                                <span class="command">sudo</span> nano /etc/exports<br><br>
+                                
+                                <span class="comment"># Ajouter les configurations suivantes :</span><br>
+                                <span class="output"># Partage pour tous les départements</span><br>
+                                <span class="output">/srv/nfs/routxperts 192.168.0.0/19(rw,sync,no_subtree_check,no_root_squash)</span><br>
+                                <span class="output">/srv/nfs/routxperts 192.168.32.0/21(rw,sync,no_subtree_check,no_root_squash)</span><br>
+                                <span class="output">/srv/nfs/routxperts 192.168.40.0/22(rw,sync,no_subtree_check,no_root_squash)</span><br>
+                                <span class="output">/srv/nfs/routxperts 192.168.44.0/25(rw,sync,no_subtree_check,no_root_squash)</span><br><br>
+                                
+                                <span class="output"># Partage spécifique département</span><br>
+                                <span class="output">/srv/nfs/departements 192.168.0.0/19(rw,sync,no_subtree_check)</span><br>
+                                <span class="output">/srv/nfs/collaboration 192.168.44.0/25(rw,sync,no_subtree_check)</span><br><br>
+                                
+                                <span class="comment"># Appliquer les exports</span><br>
+                                <span class="command">sudo</span> exportfs -a<br>
+                                <span class="command">sudo</span> systemctl restart nfs-kernel-server
+                            </code>
+                        </div>
+                    </div>
 
-        // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+                    <div class="config-section">
+                        <h4>🔒 Étape 4: Configuration du pare-feu</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Autoriser les ports NFS</span><br>
+                                <span class="command">sudo</span> ufw allow from 192.168.0.0/17 to any port 2049<br>
+                                <span class="command">sudo</span> ufw allow from 192.168.0.0/17 to any port 111<br>
+                                <span class="command">sudo</span> ufw allow from 192.168.0.0/17 to any port 20048<br><br>
+                                
+                                <span class="comment"># Activer le pare-feu si nécessaire</span><br>
+                                <span class="command">sudo</span> ufw --force enable<br><br>
+                                
+                                <span class="comment"># Vérifier les règles</span><br>
+                                <span class="command">sudo</span> ufw status numbered
+                            </code>
+                        </div>
+                    </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+                    <div class="command-steps">
+                        <h4>🖥️ Configuration des clients NFS</h4>
+                        <p>Sur chaque machine cliente (départements) :</p>
+                        <ol>
+                            <li>Installer le client NFS :
+                                <div class="code-block">
+                                    <span class="command">sudo</span> apt install nfs-common -y
+                                </div>
+                            </li>
+                            <li>Créer le point de montage :
+                                <div class="code-block">
+                                    <span class="command">sudo</span> mkdir -p /mnt/nfs/routxperts
+                                </div>
+                            </li>
+                            <li>Monter le partage NFS :
+                                <div class="code-block">
+                                    <span class="command">sudo</span> mount 192.168.44.10:/srv/nfs/routxperts /mnt/nfs/routxperts
+                                </div>
+                            </li>
+                            <li>Pour un montage automatique au démarrage, ajouter à /etc/fstab :
+                                <div class="code-block">
+                                    192.168.44.10:/srv/nfs/routxperts /mnt/nfs/routxperts nfs defaults 0 0
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
 
-        // Observe all elements with animation classes
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.fade-in-up, .scale-in, .slide-in-left, .slide-in-right');
-            animatedElements.forEach(el => observer.observe(el));
+                    <div class="verification-steps">
+                        <h5>✅ Vérification du service NFS</h5>
+                        <div class="test-command">sudo showmount -e 192.168.44.10</div>
+                        <p>Résultat attendu : Liste des exports disponibles</p>
+                        <div class="test-command">sudo exportfs -v</div>
+                        <p>Vérifier les exports configurés sur le serveur</p>
+                        <div class="test-command">df -h /mnt/nfs/routxperts</div>
+                        <p>Sur les clients : vérifier le montage NFS</p>
+                    </div>
+                </div>
 
-            // Add animation classes to departments
-            const departments = document.querySelectorAll('.department');
-            departments.forEach((dept, index) => {
-                dept.classList.add('fade-in-up');
-                dept.style.transitionDelay = `${index * 0.1}s`;
-                observer.observe(dept);
-            });
+                <!-- Prometheus & Grafana Configuration Details -->
+                <div id="prometheus-details" class="config-details" style="display: none;">
+                    <h3>📊 Configuration Prometheus & Grafana</h3>
+                    
+                    <div class="service-requirements">
+                        <h4>📋 Prérequis</h4>
+                        <ul>
+                            <li>Ubuntu Server 20.04/22.04 LTS</li>
+                            <li>Minimum 4 Go de RAM</li>
+                            <li>20 Go d'espace disque libre</li>
+                            <li>Accès réseau à tous les équipements à monitorer</li>
+                        </ul>
+                    </div>
 
-            // Add animation classes to features
-            const features = document.querySelectorAll('.feature');
-            features.forEach((feature, index) => {
-                feature.classList.add('scale-in');
-                feature.style.transitionDelay = `${index * 0.1}s`;
-                observer.observe(feature);
-            });
+                    <div class="config-section">
+                        <h4>🔧 Étape 1: Installation de Prometheus</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer un utilisateur dédié</span><br>
+                                <span class="command">sudo</span> useradd --no-create-home --shell /bin/false prometheus<br><br>
+                                
+                                <span class="comment"># Créer les répertoires nécessaires</span><br>
+                                <span class="command">sudo</span> mkdir -p /etc/prometheus<br>
+                                <span class="command">sudo</span> mkdir -p /var/lib/prometheus<br><br>
+                                
+                                <span class="comment"># Télécharger Prometheus</span><br>
+                                <span class="command">wget</span> https://github.com/prometheus/prometheus/releases/download/v2.45.0/prometheus-2.45.0.linux-amd64.tar.gz<br>
+                                <span class="command">tar</span> xvf prometheus-2.45.0.linux-amd64.tar.gz<br>
+                                <span class="command">cd</span> prometheus-2.45.0.linux-amd64/<br><br>
+                                
+                                <span class="comment"># Copier les fichiers</span><br>
+                                <span class="command">sudo</span> cp prometheus promtool /usr/local/bin/<br>
+                                <span class="command">sudo</span> cp -r consoles/ console_libraries/ /etc/prometheus/<br><br>
+                                
+                                <span class="comment"># Donner les permissions</span><br>
+                                <span class="command">sudo</span> chown -R prometheus:prometheus /etc/prometheus<br>
+                                <span class="command">sudo</span> chown prometheus:prometheus /usr/local/bin/prometheus<br>
+                                <span class="command">sudo</span> chown prometheus:prometheus /usr/local/bin/promtool<br>
+                                <span class="command">sudo</span> chown -R prometheus:prometheus /var/lib/prometheus
+                            </code>
+                        </div>
+                    </div>
 
-            // Add animation classes to objective items
-            const objectives = document.querySelectorAll('.objective-item');
-            objectives.forEach((obj, index) => {
-                obj.classList.add('fade-in-up');
-                obj.style.transitionDelay = `${index * 0.05}s`;
-                observer.observe(obj);
-            });
+                    <div class="config-section">
+                        <h4>⚙️ Étape 2: Configuration de Prometheus</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer le fichier de configuration</span><br>
+                                <span class="command">sudo</span> nano /etc/prometheus/prometheus.yml<br><br>
+                                
+                                <span class="comment"># Configuration Prometheus pour RoutXperts :</span><br>
+                                <span class="output">global:</span><br>
+                                <span class="output">  scrape_interval: 15s</span><br>
+                                <span class="output">  evaluation_interval: 15s</span><br><br>
+                                
+                                <span class="output">rule_files:</span><br>
+                                <span class="output">  # - "first_rules.yml"</span><br>
+                                <span class="output">  # - "second_rules.yml"</span><br><br>
+                                
+                                <span class="output">scrape_configs:</span><br>
+                                <span class="output">  - job_name: 'prometheus'</span><br>
+                                <span class="output">    static_configs:</span><br>
+                                <span class="output">      - targets: ['localhost:9090']</span><br><br>
+                                
+                                <span class="output">  - job_name: 'routxperts-network'</span><br>
+                                <span class="output">    static_configs:</span><br>
+                                <span class="output">      - targets:</span><br>
+                                <span class="output">        - '192.168.0.10:9100'  # Node Exporter Web Server</span><br>
+                                <span class="output">        - '192.168.32.10:9100' # Node Exporter DB Server</span><br>
+                                <span class="output">        - '192.168.40.10:9100' # Node Exporter Monitoring Server</span><br>
+                                <span class="output">        - '192.168.44.10:9100' # Node Exporter NFS Server</span><br><br>
+                                
+                                <span class="output">  - job_name: 'network-devices'</span><br>
+                                <span class="output">    static_configs:</span><br>
+                                <span class="output">      - targets:</span><br>
+                                <span class="output">        - '192.168.0.1:9100'  # Routeur RZ-1 (si SNMP configuré)</span><br>
+                                <span class="output">        - '192.168.32.1:9100' # Routeur RZ-3</span><br>
+                                <span class="output">        - '192.168.40.1:9100' # Routeur RZ-2</span><br>
+                                <span class="output">        - '192.168.44.1:9100' # Routeur RZ-4</span>
+                            </code>
+                        </div>
+                    </div>
 
-            // Add animation classes to team members
-            const teamMembers = document.querySelectorAll('.team-member');
-            teamMembers.forEach((member, index) => {
-                member.classList.add('scale-in');
-                member.style.transitionDelay = `${index * 0.1}s`;
-                observer.observe(member);
-            });
+                    <div class="config-section">
+                        <h4>🚀 Étape 3: Service systemd pour Prometheus</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Créer le fichier service</span><br>
+                                <span class="command">sudo</span> nano /etc/systemd/system/prometheus.service<br><br>
+                                
+                                <span class="comment"># Configuration du service :</span><br>
+                                <span class="output">[Unit]</span><br>
+                                <span class="output">Description=Prometheus</span><br>
+                                <span class="output">Wants=network-online.target</span><br>
+                                <span class="output">After=network-online.target</span><br><br>
+                                
+                                <span class="output">[Service]</span><br>
+                                <span class="output">User=prometheus</span><br>
+                                <span class="output">Group=prometheus</span><br>
+                                <span class="output">Type=simple</span><br>
+                                <span class="output">ExecStart=/usr/local/bin/prometheus \</span><br>
+                                <span class="output">    --config.file /etc/prometheus/prometheus.yml \</span><br>
+                                <span class="output">    --storage.tsdb.path /var/lib/prometheus/ \</span><br>
+                                <span class="output">    --web.console.templates=/etc/prometheus/consoles \</span><br>
+                                <span class="output">    --web.console.libraries=/etc/prometheus/console_libraries</span><br><br>
+                                
+                                <span class="output">[Install]</span><br>
+                                <span class="output">WantedBy=multi-user.target</span><br><br>
+                                
+                                <span class="comment"># Démarrer et activer le service</span><br>
+                                <span class="command">sudo</span> systemctl daemon-reload<br>
+                                <span class="command">sudo</span> systemctl start prometheus<br>
+                                <span class="command">sudo</span> systemctl enable prometheus
+                            </code>
+                        </div>
+                    </div>
 
-            // Add animation to stat boxes
-            const statBoxes = document.querySelectorAll('.stat-box');
-            statBoxes.forEach((box, index) => {
-                box.classList.add('scale-in');
-                box.style.transitionDelay = `${index * 0.05}s`;
-                observer.observe(box);
-            });
+                    <div class="config-section">
+                        <h4>📦 Étape 4: Installation de Node Exporter</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Installation sur tous les serveurs</span><br>
+                                <span class="command">wget</span> https://github.com/prometheus/node_exporter/releases/download/v1.6.0/node_exporter-1.6.0.linux-amd64.tar.gz<br>
+                                <span class="command">tar</span> xvf node_exporter-1.6.0.linux-amd64.tar.gz<br>
+                                <span class="command">sudo</span> cp node_exporter-1.6.0.linux-amd64/node_exporter /usr/local/bin/<br><br>
+                                
+                                <span class="comment"># Créer le service systemd</span><br>
+                                <span class="command">sudo</span> nano /etc/systemd/system/node_exporter.service<br><br>
+                                
+                                <span class="output">[Unit]</span><br>
+                                <span class="output">Description=Node Exporter</span><br>
+                                <span class="output">After=network.target</span><br><br>
+                                
+                                <span class="output">[Service]</span><br>
+                                <span class="output">User=node_exporter</span><br>
+                                <span class="output">Group=node_exporter</span><br>
+                                <span class="output">Type=simple</span><br>
+                                <span class="output">ExecStart=/usr/local/bin/node_exporter</span><br><br>
+                                
+                                <span class="output">[Install]</span><br>
+                                <span class="output">WantedBy=multi-user.target</span><br><br>
+                                
+                                <span class="comment"># Créer l'utilisateur et démarrer</span><br>
+                                <span class="command">sudo</span> useradd -rs /bin/false node_exporter<br>
+                                <span class="command">sudo</span> systemctl daemon-reload<br>
+                                <span class="command">sudo</span> systemctl start node_exporter<br>
+                                <span class="command">sudo</span> systemctl enable node_exporter
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>📈 Étape 5: Installation de Grafana</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Ajouter le repository Grafana</span><br>
+                                <span class="command">sudo</span> apt-get install -y software-properties-common<br>
+                                <span class="command">sudo</span> add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"<br><br>
+                                
+                                <span class="comment"># Importer la clé GPG</span><br>
+                                <span class="command">wget</span> -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -<br>
+                                <span class="command">sudo</span> apt-get update<br><br>
+                                
+                                <span class="comment"># Installer Grafana</span><br>
+                                <span class="command">sudo</span> apt-get install grafana -y<br><br>
+                                
+                                <span class="comment"># Démarrer et activer Grafana</span><br>
+                                <span class="command">sudo</span> systemctl start grafana-server<br>
+                                <span class="command">sudo</span> systemctl enable grafana-server<br><br>
+                                
+                                <span class="comment"># Configuration par défaut</span><br>
+                                <span class="command">sudo</span> systemctl status grafana-server<br>
+                                <span class="output">● grafana-server.service - Grafana instance</span><br>
+                                <span class="output">     Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; vendor preset: enabled)</span><br>
+                                <span class="output">     Active: active (running) since ...</span>
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>🌐 Étape 6: Configuration de Grafana</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Accéder à l'interface Grafana</span><br>
+                                <span class="output">URL: http://192.168.40.10:3000</span><br>
+                                <span class="output">Login: admin</span><br>
+                                <span class="output">Password: admin (changer au premier login)</span><br><br>
+                                
+                                <span class="comment"># Configurer la source de données Prometheus</span><br>
+                                <span class="output">1. Configuration → Data Sources → Add data source</span><br>
+                                <span class="output">2. Sélectionner Prometheus</span><br>
+                                <span class="output">3. URL: http://localhost:9090</span><br>
+                                <span class="output">4. Save & Test</span><br><br>
+                                
+                                <span class="comment"># Importer les dashboards pour RoutXperts</span><br>
+                                <span class="output">1. Créer → Import</span><br>
+                                <span class="output">2. Dashboard ID: 1860 (Node Exporter Full)</span><br>
+                                <span class="output">3. Dashboard ID: 11074 (Network Monitoring)</span><br>
+                                <span class="output">4. Dashboard ID: 10467 (Linux Server Monitoring)</span>
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h4>🔒 Étape 7: Configuration de sécurité</h4>
+                        <div class="code-block">
+                            <code>
+                                <span class="comment"># Configuration du pare-feu</span><br>
+                                <span class="command">sudo</span> ufw allow 9090/tcp  # Prometheus<br>
+                                <span class="command">sudo</span> ufw allow 3000/tcp  # Grafana<br>
+                                <span class="command">sudo</span> ufw allow 9100/tcp  # Node Exporter<br><br>
+                                
+                                <span class="comment"># Configuration HTTPS pour Grafana (optionnel)</span><br>
+                                <span class="command">sudo</span> apt install certbot python3-certbot-nginx -y<br>
+                                <span class="command">sudo</span> certbot --nginx -d monitoring.routxperts.local<br><br>
+                                
+                                <span class="comment"># Authentification basique pour Prometheus</span><br>
+                                <span class="command">sudo</span> apt install apache2-utils -y<br>
+                                <span class="command">sudo</span> htpasswd -c /etc/nginx/.htpasswd prometheus-user
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="command-steps">
+                        <h4>📊 Dashboard Configuration pour RoutXperts</h4>
+                        <p>Création de dashboards personnalisés :</p>
+                        <ol>
+                            <li>Dashboard "Réseau RoutXperts" :
+                                <ul>
+                                    <li>Latence réseau entre départements</li>
+                                    <li>Disponibilité des services (Apache, MySQL, NFS)</li>
+                                    <li>Utilisation bande passante inter-départements</li>
+                                </ul>
+                            </li>
+                            <li>Dashboard "Performance Serveurs" :
+                                <ul>
+                                    <li>CPU/Mémoire des 4 serveurs VM</li>
+                                    <li>Espace disque et IOPS</li>
+                                    <li>Uptime et charge système</li>
+                                </ul>
+                            </li>
+                            <li>Dashboard "Services Réseau" :
+                                <ul>
+                                    <li>Statut OSPF des routeurs</li>
+                                    <li>Connexions actives par service</li>
+                                    <li>Alertes de performance</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="verification-steps">
+                        <h5>✅ Vérification des services de monitoring</h5>
+                        <div class="test-command">curl http://192.168.40.10:9090/api/v1/query?query=up</div>
+                        <p>Prometheus : Vérifier l'état des cibles</p>
+                        <div class="test-command">sudo systemctl status prometheus grafana-server</div>
+                        <p>Vérifier que les services sont actifs</p>
+                        <div class="test-command">ss -tlnp | grep -E '(9090|3000|9100)'</div>
+                        <p>Vérifier les ports d'écoute</p>
+                        <div class="test-command">sudo grafana-cli admin reset-admin-password newpassword</div>
+                        <p>Changer le mot de passe admin Grafana</p>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-top: 25px;">
+                        <h5 style="font-size: 1.3em; margin-bottom: 15px;">🚀 Alertes et Notifications</h5>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px;">
+                                <strong>⚠️ Alertes CPU</strong>
+                                <p style="margin-top: 5px; font-size: 0.9em;">CPU > 80% pendant 5min</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px;">
+                                <strong>💾 Alertes Disque</strong>
+                                <p style="margin-top: 5px; font-size: 0.9em;">Espace disque < 10%</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px;">
+                                <strong>🌐 Alertes Service</strong>
+                                <p style="margin-top: 5px; font-size: 0.9em;">Service down pendant 2min</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px;">
+                                <strong>📈 Alertes Réseau</strong>
+                                <p style="margin-top: 5px; font-size: 0.9em;">Latence > 100ms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    Projet réalisé dans le cadre du module <strong>Systèmes et Réseaux Intégré</strong>
+                </div>
+                <div class="footer-author">
+                    <span class="footer-icon">🚀</span>
+                    RoutXperts Network Infrastructure
+                    <span class="footer-icon">🌐</span>
+                </div>
+                <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                    © 2024 - Présentation finale: Janvier 2026
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor Elements -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-trailer"></div>
+    
+    <script>
+    // Fonction pour switcher entre les onglets
+    function switchTab(tabIndex) {
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        tabs[tabIndex].classList.add('active');
+        tabContents[tabIndex].classList.add('active');
+    }
+
+    // Fonction pour montrer les détails des services
+    function showServiceDetails(service) {
+        const details = document.querySelectorAll('.config-details');
+        details.forEach(detail => detail.style.display = 'none');
+        
+        document.getElementById(`${service}-details`).style.display = 'block';
+        
+        // Scroll vers la section
+        document.getElementById(`${service}-details`).scrollIntoView({
+            behavior: 'smooth'
         });
+    }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+    // Fonction pour les départements
+    function toggleDepartment(element) {
+        const departments = document.querySelectorAll('.department');
+        departments.forEach(dept => dept.classList.remove('active'));
+        element.classList.add('active');
+    }
+
+    // Fonction pour les informations backbone
+    function showBackboneInfo() {
+        alert('Backbone OSPF Configuration:\n\n• Protocole: OSPF Area 0\n• Routeurs: RZ1, RZ2, RZ3, RZ4\n• R-NAT: Routeur Internet avec NAT/PAT\n• VPN: Tunnels site-à-site');
+    }
+
+    // Fonction pour les informations cloud
+    function showCloudInfo() {
+        alert('Cloud WiFi / Transit Network:\n\n• Type: Réseau de transit central\n• Connexions: 4 départements\n• Protocole: OSPF\n• Redondance: Multi-liens');
+    }
+
+    // Cursor custom
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorTrailer = document.querySelector('.cursor-trailer');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorTrailer.style.left = e.clientX + 'px';
+            cursorTrailer.style.top = e.clientY + 'px';
+        }, 100);
+    });
+
+    // Hover effects
+    document.querySelectorAll('a, button, .tab, .department, .backbone, .cloud-wifi, .download-btn, .top-credit, .service-card').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
         });
-
-        // Add parallax effect to header on scroll
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const header = document.querySelector('header');
-            if (header) {
-                const scrolled = currentScroll * 0.5;
-                header.style.transform = `translateY(${scrolled}px)`;
-            }
-            lastScroll = currentScroll;
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
         });
+    });
 
-        // Enhanced tab switching with animation
-        const originalSwitchTab = switchTab;
-        switchTab = function(index) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                if (content.classList.contains('active')) {
-                    content.style.animation = 'fadeOut 0.3s ease';
-                    setTimeout(() => {
-                        content.classList.remove('active');
-                        content.style.animation = '';
-                    }, 300);
-                }
-            });
-            
-            setTimeout(() => {
-                originalSwitchTab(index);
-            }, 300);
-        };
+    // Click effect
+    document.addEventListener('mousedown', () => {
+        cursor.classList.add('click');
+    });
+    document.addEventListener('mouseup', () => {
+        cursor.classList.remove('click');
+    });
 
-        // Add fadeOut animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeOut {
-                from { opacity: 1; transform: translateY(0); }
-                to { opacity: 0; transform: translateY(-20px); }
-            }
-        `;
-        document.head.appendChild(style);
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-        // Add ripple effect to buttons
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('download-btn') || e.target.closest('.download-btn')) {
-                const button = e.target.classList.contains('download-btn') ? e.target : e.target.closest('.download-btn');
-                const ripple = document.createElement('span');
-                const rect = button.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-                
-                button.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
+    }, observerOptions);
 
-        // Add ripple CSS
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            .download-btn {
-                position: relative;
-                overflow: hidden;
-            }
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple-animation 0.6s ease-out;
-                pointer-events: none;
-            }
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
+    document.querySelectorAll('.fade-in-up, .scale-in, .slide-in-left, .slide-in-right').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Initialisation
+    document.addEventListener('DOMContentLoaded', function() {
+        // Activer les animations
+        document.querySelectorAll('.department, .feature, .stat-box').forEach((el, index) => {
+            el.classList.add('fade-in-up');
+            el.style.transitionDelay = `${index * 0.1}s`;
+        });
+    });
     </script>
 </body>
 </html>
